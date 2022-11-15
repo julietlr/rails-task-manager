@@ -1,0 +1,18 @@
+<h1>Task</h1>
+<h2>
+<%= @task.title %>
+</h2>
+<p>
+<%= @task.details %>
+</p>
+<p>
+<% if @task.completed %>
+<i class="fa-light fa-square-check"></i>
+<% else %>
+<i class="fa-light fa-square"></i>
+<% end %>
+
+</p>
+<%= link_to 'Index', tasks_path %>
+<%= link_to 'Edit', edit_task_path %>
+<%= link_to 'Delete', task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
